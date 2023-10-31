@@ -48,7 +48,7 @@ class LandingPage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: ElevatedButton(
-                        onPressed: () => null,
+                        onPressed: () => Get.toNamed('/LoginPage'),
                         child: Text(
                           "Login",
                           style: TextStyle(fontSize: screenWidth * 0.04),
