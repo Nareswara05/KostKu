@@ -18,7 +18,7 @@ class RegisterView extends StatelessWidget {
             children: [
               SizedBox(height: 20,),
               Stack(
-                alignment: Alignment.center, // Memusatkan kontennya
+                alignment: Alignment.center,
                 children: [
                   Container(
                     width: 48,
@@ -32,7 +32,7 @@ class RegisterView extends StatelessWidget {
                     ),
                     child: Center(
                       child: IconButton(
-                        padding: EdgeInsets.zero, // Menghilangkan padding
+                        padding: EdgeInsets.zero,
                         icon: Icon(Icons.arrow_back, size: 36),
                         onPressed: () {
                           Get.back();
