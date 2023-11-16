@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kostku_app/Routes/AppPages.dart';
+import 'package:iconify_flutter/iconify_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,8 +19,6 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.pages,
       initialRoute: '/LandingPage',
 
-
     );
   }
 }
-

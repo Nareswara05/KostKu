@@ -34,7 +34,7 @@ class RegisterController extends GetxController{
 
 
     }
-    Get.toNamed('/');
+    Get.toNamed('/HomeJakartaView');
   }
 
 
