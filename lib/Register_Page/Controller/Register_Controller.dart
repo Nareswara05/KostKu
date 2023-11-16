@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kostku_app/Register_Page/Controller/User_Controller.dart';
+import 'package:kostku_app/profile_page/Controller/Profile_Controller.dart';
 
-class RegisterController extends GetxController{
+class RegisterController extends GetxController {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  final UserController userController = Get.put(UserController());
-
-
+  final ProfileController profileController = Get.put(ProfileController());
 
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty || !value.contains('@gmail.com')) {
@@ -20,26 +18,18 @@ class RegisterController extends GetxController{
     return null;
   }
 
-
-
-
-
   void onSubmit() {
-    if (_formKey.currentState != null && _formKey.currentState!.validate()) {
-
-      userController.name.value = 'newName';
-      userController.email.value = 'newEmail';
-      userController.phone.value = 'newPhone';
-      userController.password.value = 'newPassword';
-
-
+    if (getFormKey().currentState != null &&
+        getFormKey().currentState!.validate()) {
+      profileController.setDataFromRegister(
+        nameController.text,
+        phoneController.text,
+      );
     }
-    Get.toNamed('/');
+    Get.offNamed('/ProfilePage');
   }
 
-
-
-
-
-
+  GlobalKey<FormState> getFormKey() {
+    return _formKey;
+  }
 }
