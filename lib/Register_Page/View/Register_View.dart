@@ -71,7 +71,7 @@ class RegisterView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              TextField(
+              TextFormField(
                 controller: registerController.emailController,
                 decoration: InputDecoration(
                   labelText: "Email",
@@ -119,6 +119,17 @@ class RegisterView extends StatelessWidget {
                   ),
                   onPressed: () => registerController.onSubmit(),
                   child: Text("Daftar"),
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  Get.offNamed('/LoginPage');
+                },
+                child: Text(
+                  "Sudah memiliki akun? Masuk",
+                  style: TextStyle(
+                    color: Color(0xFF2254D1), // Warna teks Daftar
+                  ),
                 ),
               ),
             ],

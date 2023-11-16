@@ -101,7 +101,7 @@ class LoginPageView extends StatelessWidget {
 
             TextButton(
               onPressed: () {
-                Get.toNamed('/RegisterPage');
+                Get.offNamed('/RegisterPage');
               },
               child: Text(
                 "Tidak memiliki akun? Daftar",
