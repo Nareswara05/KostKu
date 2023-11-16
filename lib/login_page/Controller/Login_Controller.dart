@@ -15,8 +15,8 @@ class LoginController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    cEmail = new TextEditingController();
-    cPass = new TextEditingController();
+    cEmail = TextEditingController();
+    cPass = TextEditingController();
   }
 
   loginUser(String email, password) async {
@@ -39,15 +39,11 @@ class LoginController extends GetxController {
         print('Token : $token');
         Get.snackbar("Selamat", "Login Sukses");
         prefs = await SharedPreferences.getInstance();
-
-        if (email == "eve.holt@reqres.in" && password == "cityslicka") {
+          if (email == "eve.holt@reqres.in" && password == "cityslicka") {
           await prefs.setString('username', token.toString());
-          Get.offNamed('/ProfilePage');
+          Get.toNamed('/HomePage'); 
           isSuccess.value = true;
-
-          // Update the profile data when logging in
-          Get.find<ProfileController>().setDataFromLogin(token.toString());
-        }
+        }   
 
         isLoading.value = false;
       } else {
@@ -59,3 +55,37 @@ class LoginController extends GetxController {
     }
   }
 }
+
+
+void main() {
+  runApp(GetMaterialApp(
+    initialRoute: '/', // Rute awal
+    getPages: [
+      GetPage(name: '/', page: () => LoginScreen()),
+      GetPage(name: '/HomePage', page: () => HomeScreen()),
+    ],
+  ));
+}
+
+class LoginScreen extends StatelessWidget {
+  final loginController = Get.put(LoginController());
+
+  @override
+  Widget build(BuildContext context) {
+    // Tampilan halaman login
+    return Scaffold(
+      // ...
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Tampilan halaman beranda
+    return Scaffold(
+      // ...
+    );
+  }
+}
+

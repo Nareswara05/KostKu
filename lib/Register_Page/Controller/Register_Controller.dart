@@ -26,7 +26,9 @@ class RegisterController extends GetxController {
         phoneController.text,
       );
     }
-    Get.offNamed('/ProfilePage');
+
+    Get.toNamed('/HomeJakartaView');
+
   }
 
   GlobalKey<FormState> getFormKey() {
