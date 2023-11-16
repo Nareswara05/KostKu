@@ -57,7 +57,7 @@ Widget build(BuildContext context) {
             ),
             SizedBox(height: 8),
             Text(
-              'Sewa dan cari kos dengan mudah',
+              'Sewa dan cari kos dengan sangat mudah',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 11,
