@@ -1,16 +1,23 @@
 import 'package:get/get.dart';
-import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import '../Model/Model.dart';
+
 
 class HomeJakartaController extends GetxController {
   late RxList<Kosaituminah> kosList = <Kosaituminah>[].obs;
   var isLoading = true.obs; // Add isLoading
+  late final SharedPreferences prefs;
 
   @override
   void onInit() {
     super.onInit();
-    fetchKosData(); // Fetch and parse JSON data when the controller is initialized
+    fetchKosData();
+    checkSharedPreference();
+  }
+
+  void checkSharedPreference() async {
+    prefs = await SharedPreferences.getInstance();
   }
 
   Future<void> fetchKosData() async {
@@ -36,4 +43,6 @@ class HomeJakartaController extends GetxController {
       update(); // Update the UI
     }
   }
+
+
 }
