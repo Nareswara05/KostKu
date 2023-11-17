@@ -4,6 +4,7 @@ import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/system_uicons.dart';
 import 'package:kostku_app/Like_Page/Model/Model.dart';
 import 'package:kostku_app/Like_Page/View/Like_View.dart';
+import 'package:kostku_app/profile_page/View/Profile_Page.dart';
 
 import '../Controller/Home_Jakarta_Controller.dart';
 
@@ -15,7 +16,7 @@ Widget build(BuildContext context) {
   return Scaffold(
     backgroundColor: Colors.white,
     appBar: PreferredSize(
-      preferredSize: Size(363, 52),
+      preferredSize: Size(362, 20),
       child: ListView.builder(
         itemCount: HomeJakartaController()
             .kosList
@@ -378,7 +379,7 @@ Widget build(BuildContext context) {
                                 left: 0,
                                 top: 2,
                                 child: Container(
-                                  width: 98,
+                                  width: 108,
                                   height: 70,
                                   decoration: ShapeDecoration(
                                     image: DecorationImage(
@@ -478,17 +479,11 @@ Widget build(BuildContext context) {
                                     children: [
                                       Positioned(
                                         left: 0,
-                                        top: 0,
+                                        top: -2,
                                         child: Container(
                                           width: 9,
                                           height: 17,
-                                          decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                              image: NetworkImage(
-                                                  "https://via.placeholder.com/9x17"),
-                                              fit: BoxFit.contain,
-                                            ),
-                                          ),
+                                          child: Icon(Icons.location_pin, size: 10,color: Colors.red,),
                                         ),
                                       ),
                                       Positioned(
@@ -513,7 +508,7 @@ Widget build(BuildContext context) {
                                 left: 111,
                                 top: 57,
                                 child: Text(
-                                  '${kos.hargaKos.toString()} / Bulan',
+                                  'Rp${kos.hargaKos.toString()} / Bulan',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 10,
@@ -557,7 +552,7 @@ Widget build(BuildContext context) {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home, color: Color(0xFF2254D1)),
             label: 'Beranda',
           ),
           BottomNavigationBarItem(
@@ -578,7 +573,7 @@ Widget build(BuildContext context) {
           } else if (index == 1) {
             Get.to(LikeView());
           } else if (index == 2) {
-            Get.to(());
+            Get.to(ProfilePage());
           }
         },
       ),

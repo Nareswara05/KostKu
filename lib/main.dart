@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:kostku_app/Register_Page/Controller/Register_Controller.dart';
 import 'package:kostku_app/Routes/AppPages.dart';
 
-import 'package:iconify_flutter/iconify_flutter.dart';
 
 import 'package:kostku_app/profile_page/Controller/Profile_Controller.dart';
 
