@@ -566,14 +566,14 @@ Widget build(BuildContext context) {
         ],
         selectedItemColor: Colors.grey,
         unselectedItemColor: Colors.grey,
-        currentIndex: 0, // Set to 0 for the "Beranda" tab
+        currentIndex: 0, 
         onTap: (int index) {
           if (index == 0) {
-            // Current tab is selected, no need to navigate
+
           } else if (index == 1) {
-            Get.to(LikeView());
+            Get.offNamed('/LikePage');
           } else if (index == 2) {
-            Get.to(ProfilePage());
+            Get.offNamed('/ProfilePage');
           }
         },
       ),

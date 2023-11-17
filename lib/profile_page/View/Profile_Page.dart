@@ -197,11 +197,11 @@ class _ProfilePageState extends State<ProfilePage> {
         currentIndex: 2, // Set to 1 for the "Favorit" tab
         onTap: (int index) {
           if (index == 0) {
-            Get.to(HomeJakartaView());
+            Get.offNamed('/HomePage');
           } else if (index == 1) {
-            Get.to(LikeView());
+            Get.offNamed('/LikePage');
           } else if (index == 2) {
-
+            Get.offNamed('/ProfilePage');
           }
         },
       ),

@@ -275,11 +275,11 @@ class LikeView extends StatelessWidget {
         currentIndex: 1, // Set to 1 for the "Favorit" tab
         onTap: (int index) {
           if (index == 0) {
-            Get.to(HomeJakartaView());
+            Get.offNamed('/HomePage');
           } else if (index == 1) {
 
           } else if (index == 2) {
-            Get.to(ProfilePage());
+            Get.offNamed('/ProfilePage');
           }
         },
       ),
