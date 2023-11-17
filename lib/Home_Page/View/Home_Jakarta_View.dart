@@ -566,7 +566,7 @@ Widget build(BuildContext context) {
         ],
         selectedItemColor: Colors.grey,
         unselectedItemColor: Colors.grey,
-        currentIndex: 0, 
+        currentIndex: 0,
         onTap: (int index) {
           if (index == 0) {
 

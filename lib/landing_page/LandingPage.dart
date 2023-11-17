@@ -52,7 +52,7 @@ class LandingPage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: ElevatedButton(
-                        onPressed: () => Get.toNamed('/LoginPage'),
+                        onPressed: () => Get.offNamed('/LoginPage'),
                         child: Text(
                           "Login",
                           style: GoogleFonts.poppins(fontSize: screenWidth * 0.04, fontWeight: FontWeight.w500),
@@ -68,7 +68,7 @@ class LandingPage extends StatelessWidget {
                     SizedBox(width: 16.0), // Spasi antara tombol
                     Expanded(
                       child: ElevatedButton(
-                        onPressed: () => Get.toNamed('/RegisterPage'),
+                        onPressed: () => Get.offNamed('/RegisterPage'),
                         child: Text(
                           "Register",
                           style: GoogleFonts.poppins(fontSize: screenWidth * 0.04, color: Colors.black, fontWeight: FontWeight.w500

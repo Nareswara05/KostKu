@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kostku_app/Home_Page/View/Home_Jakarta_View.dart';
-import 'package:kostku_app/Like_Page/View/Like_View.dart';
 import 'package:kostku_app/Register_Page/Controller/Register_Controller.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +29,7 @@ class _ProfilePageState extends State<ProfilePage> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEUkV9jlzEKTAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=',
+                  'https://htmlcolorcodes.com/assets/images/colors/dark-blue-color-solid-background-1920x1080.png'
                 ),
                 fit: BoxFit.cover,
               ),
@@ -79,7 +77,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         height: 40,
 
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color:Color(0xFF2254D1),
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: ElevatedButton(
@@ -88,7 +86,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               Get.offNamed('/LoginPage');
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.transparent,
+                              backgroundColor: Colors.transparent,
                               shadowColor: Colors.transparent,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25),
@@ -111,15 +109,15 @@ class _ProfilePageState extends State<ProfilePage> {
                         height: 40,
                         // Atur tinggi Container sesuai kebutuhan Anda
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Color(0xFF2254D1),
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: ElevatedButton(
                             onPressed: () {
-                              // Implement your button action here
+
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.transparent,
+                              backgroundColor: Colors.transparent,
                               shadowColor: Colors.transparent,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25),
@@ -140,9 +138,8 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       Container(
                         height: 40,
-                        // Atur tinggi Container sesuai kebutuhan Anda
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Color(0xFF2254D1),
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: ElevatedButton(
@@ -150,7 +147,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               Get.toNamed('/RegisterPage');
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.transparent,
+                              backgroundColor: Colors.transparent,
                               shadowColor: Colors.transparent,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25),
