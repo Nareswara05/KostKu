@@ -5,7 +5,7 @@ import '../Model/Model.dart';
 
 class HomeJakartaController extends GetxController {
   late RxList<Kosaituminah> kosList = <Kosaituminah>[].obs;
-  var isLoading = true.obs; // Add isLoading property
+  var isLoading = true.obs; // Add isLoading
 
   @override
   void onInit() {

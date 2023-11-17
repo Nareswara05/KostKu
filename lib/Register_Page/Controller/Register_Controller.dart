@@ -27,7 +27,7 @@ class RegisterController extends GetxController {
       );
     }
 
-    Get.toNamed('/HomeJakartaView');
+    Get.offNamed('/HomePage');
 
   }
 

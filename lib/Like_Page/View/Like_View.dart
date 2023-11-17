@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kostku_app/Like_Page/Controller/like_controller.dart';
 import 'package:kostku_app/Home_Page/View/Home_Jakarta_View.dart';
+import 'package:kostku_app/profile_page/View/Profile_Page.dart';
 
 class LikeView extends StatelessWidget {
   final LikeController controller = Get.put(LikeController());
@@ -276,9 +277,9 @@ class LikeView extends StatelessWidget {
           if (index == 0) {
             Get.to(HomeJakartaView());
           } else if (index == 1) {
-            Get.to(LikeView());
+
           } else if (index == 2) {
-            Get.to(());
+            Get.to(ProfilePage());
           }
         },
       ),

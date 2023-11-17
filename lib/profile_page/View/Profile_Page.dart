@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kostku_app/Home_Page/View/Home_Jakarta_View.dart';
+import 'package:kostku_app/Like_Page/View/Like_View.dart';
 import 'package:kostku_app/Register_Page/Controller/Register_Controller.dart';
 import 'package:get/get.dart';
 
@@ -145,7 +147,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         child: ElevatedButton(
                             onPressed: () {
-                            Get.toNamed('/RegisterPage');
+                              Get.toNamed('/RegisterPage');
                             },
                             style: ElevatedButton.styleFrom(
                               primary: Colors.transparent,
@@ -174,6 +176,34 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Beranda',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorit',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person, color: Color(0xFF2254D1)),
+            label: 'Profil',
+          ),
+        ],
+        selectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.grey,
+        currentIndex: 2, // Set to 1 for the "Favorit" tab
+        onTap: (int index) {
+          if (index == 0) {
+            Get.to(HomeJakartaView());
+          } else if (index == 1) {
+            Get.to(LikeView());
+          } else if (index == 2) {
+
+          }
+        },
       ),
     );
   }

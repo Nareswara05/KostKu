@@ -41,7 +41,7 @@ class LoginController extends GetxController {
         prefs = await SharedPreferences.getInstance();
           if (email == "eve.holt@reqres.in" && password == "cityslicka") {
           await prefs.setString('username', token.toString());
-          Get.toNamed('/HomePage'); 
+          Get.offNamed('/HomePage');
           isSuccess.value = true;
         }   
 
@@ -57,35 +57,4 @@ class LoginController extends GetxController {
 }
 
 
-void main() {
-  runApp(GetMaterialApp(
-    initialRoute: '/', // Rute awal
-    getPages: [
-      GetPage(name: '/', page: () => LoginScreen()),
-      GetPage(name: '/HomePage', page: () => HomeScreen()),
-    ],
-  ));
-}
-
-class LoginScreen extends StatelessWidget {
-  final loginController = Get.put(LoginController());
-
-  @override
-  Widget build(BuildContext context) {
-    // Tampilan halaman login
-    return Scaffold(
-      // ...
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Tampilan halaman beranda
-    return Scaffold(
-      // ...
-    );
-  }
-}
 

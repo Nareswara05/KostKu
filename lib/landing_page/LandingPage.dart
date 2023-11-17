@@ -17,6 +17,7 @@ class LandingPage extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Center(
             child: Column(
+
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: 60,),
@@ -28,21 +29,24 @@ class LandingPage extends StatelessWidget {
                 Text(
                   "Aplikasi pencari kos nomer 1 di Indonesia",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold,
-                    fontSize: screenWidth * 0.07,
+                    fontSize: 25,
                   ),
                 ),
                 SizedBox(height: 30.0),
-                Text(
-                  "Selamat datang di aplikasi pencari kos kami! Kami akan membantu Anda menemukan kos yang sesuai dengan kebutuhan Anda.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: screenWidth * 0.05,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Text(
+                    "Selamat datang di aplikasi pencari kos kami! Kami akan membantu Anda menemukan kos yang sesuai dengan kebutuhan Anda.",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 17,
+                    ),
                   ),
                 ),
-                SizedBox(height: 200),
+               SizedBox(height: 150,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -51,7 +55,7 @@ class LandingPage extends StatelessWidget {
                         onPressed: () => Get.toNamed('/LoginPage'),
                         child: Text(
                           "Login",
-                          style: TextStyle(fontSize: screenWidth * 0.04),
+                          style: GoogleFonts.poppins(fontSize: screenWidth * 0.04, fontWeight: FontWeight.w500),
                         ),
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(vertical: screenWidth * 0.04, horizontal: screenWidth * 0.1),
@@ -67,10 +71,11 @@ class LandingPage extends StatelessWidget {
                         onPressed: () => Get.toNamed('/RegisterPage'),
                         child: Text(
                           "Register",
-                          style: TextStyle(fontSize: screenWidth * 0.04, color: Colors.black),
+                          style: GoogleFonts.poppins(fontSize: screenWidth * 0.04, color: Colors.black, fontWeight: FontWeight.w500
+                          ),
                         ),
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: screenWidth * 0.04, horizontal: screenWidth * 0.1),
+                          padding: EdgeInsets.symmetric(vertical: screenWidth * 0.04, horizontal: screenWidth * 0.1,),
                           backgroundColor: Colors.transparent,
                           elevation: 0,
                           side: BorderSide(color: Colors.black, width: 1),
