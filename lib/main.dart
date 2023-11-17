@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'KostKu Mobile Apps',
       debugShowCheckedModeBanner: false,
       getPages: AppPages.pages,
-      initialRoute: '/InputPayment',
+      initialRoute: '/landingPage',
 
     );
   }
