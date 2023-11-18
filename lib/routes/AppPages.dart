@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
+import 'package:kostku_app/Home_Page/Controller/Home_Bandung_Controller.dart';
+import 'package:kostku_app/Home_Page/View/Home_Bandung_View.dart';
 import 'package:kostku_app/Home_Page/View/Home_Jakarta_View.dart';
+import 'package:kostku_app/Home_Page/View/Home_Semarang_View.dart';
 import 'package:kostku_app/Like_Page/View/Like_View.dart';
 import 'package:kostku_app/Register_Page/View/Register_View.dart';
 import 'package:kostku_app/landing_page/LandingPage.dart';
@@ -16,33 +19,52 @@ class AppPages {
     GetPage(
       name: '/LandingPage',
       page: () => LandingPage(),
+      transition: Transition.fadeIn,
     ),
     GetPage(
-        name: '/RegisterPage',
-        page:()=> RegisterView(),
+      name: '/RegisterPage',
+      page: () => RegisterView(),
+      transition: Transition.rightToLeft,
     ),
     GetPage(
-        name: '/LoginPage',
-        page:()=> LoginPageView()
-    ),
-    GetPage(name: '/HomePage',
-        page:()=> HomeJakartaView()
+      name: '/LoginPage',
+      page: () => LoginPageView(),
+      transition: Transition.leftToRight,
     ),
     GetPage(
-        name: '/ProfilePage',
-        page:()=> ProfilePage(),
+      name: '/HomePage',
+      page: () => HomeJakartaView(),
+      transition: Transition.fadeIn,
     ),
     GetPage(
-        name: '/LikePage',
-        page:()=> LikeView()
+      name: '/HomePage/Bandung',
+      page: () => HomeBandungView(),
+      transition: Transition.fadeIn,
     ),
     GetPage(
-        name: '/InputPayment',
-        page:()=> InputPaymentPage()
+      name: '/HomePage/Semarang',
+      page: () => HomeSemarangView(),
+      transition: Transition.fadeIn,
     ),
     GetPage(
-        name: '/PaymentBill',
-        page:()=> PaymentBill()
-    )
+      name: '/ProfilePage',
+      page: () => ProfilePage(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: '/LikePage',
+      page: () => LikeView(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: '/InputPayment',
+      page: () => InputPaymentPage(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: '/PaymentBill',
+      page: () => PaymentBill(),
+      transition: Transition.fadeIn,
+    ),
   ];
 }

@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../Model/Model.dart';
 
-class HomeJakartaController extends GetxController {
+class HomeBandungController extends GetxController {
   late RxList<Kosaituminah> kosList = <Kosaituminah>[].obs;
   var isLoading = true.obs;
   late final SharedPreferences prefs;
@@ -30,7 +30,7 @@ class HomeJakartaController extends GetxController {
 
         kosList = kosModel
             .toKosList()
-            .where((kos) => kos.kota == Kota.JAKARTA)
+            .where((kos) => kos.kota == Kota.BANDUNG)
             .toList()
             .obs;
 
