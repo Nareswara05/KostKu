@@ -3,23 +3,23 @@ import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/ant_design.dart';
 import 'package:iconify_flutter/icons/system_uicons.dart';
-import 'package:kostku_app/Like_Page/Model/Model.dart';
+import 'package:kostku_app/Home_Page/View/Home_Jakarta_View.dart';
 import 'package:kostku_app/Home_Page/View/Home_Bandung_View.dart';
 import 'package:kostku_app/Home_Page/View/Home_Semarang_View.dart';
-import 'package:kostku_app/Home_Page/View/Home_Kudus_View.dart';
+import 'package:kostku_app/Like_Page/Model/Model.dart';
 import 'package:kostku_app/Like_Page/View/Like_View.dart';
 import 'package:kostku_app/profile_page/View/Profile_Page.dart';
 
-import '../Controller/Home_Jakarta_Controller.dart';
+import '../Controller/Home_Kudus_Controller.dart';
 
-class HomeJakartaView extends StatelessWidget {
-  final HomeJakartaController controller = Get.put(HomeJakartaController());
+class HomeKudusView extends StatelessWidget {
+  final HomeKudusController controller = Get.put(HomeKudusController());
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    backgroundColor: Colors.white,
-    appBar: PreferredSize(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(52),
         child: AppBar(
           backgroundColor: Colors.white,
@@ -45,27 +45,24 @@ Widget build(BuildContext context) {
                 ),
               ),
               Spacer(),
-                IconButton(
-                  padding: EdgeInsets.all(0), // Atur padding menjadi 0
-                  icon: Iconify(
-                    AntDesign.message,
-                    size: 24,
-                    color: Colors.black54,
-                  ),
-                  onPressed: () {
-
-                  },
+              IconButton(
+                padding: EdgeInsets.all(0), // Atur padding menjadi 0
+                icon: Iconify(
+                  AntDesign.message,
+                  size: 24,
+                  color: Colors.black54,
                 ),
-                IconButton(
-                  padding: EdgeInsets.all(0), 
-                  icon: Icon(
-                    Icons.notifications,
-                    size: 24,
-                    color: Colors.black54,
-                  ),
-                  onPressed: () {
-                  },
+                onPressed: () {},
+              ),
+              IconButton(
+                padding: EdgeInsets.all(0),
+                icon: Icon(
+                  Icons.notifications,
+                  size: 24,
+                  color: Colors.black54,
                 ),
+                onPressed: () {},
+              ),
             ],
           ),
         ),
@@ -172,14 +169,22 @@ Widget build(BuildContext context) {
                   SizedBox(height: 8),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Row( 
+                    child: Row(
                       children: [
-                            Card(
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeJakartaView()),
+                            );
+                          },
+                          child: Card(
                             elevation: 4,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(11),
                             ),
-                            color: Color(0xFF2254D1),
+                            color: Colors.white,
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -201,7 +206,7 @@ Widget build(BuildContext context) {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
                                       child: Image.asset(
-                                        'assets/monasjakarta.jpg', 
+                                        'assets/monasjakarta.jpg',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -212,7 +217,7 @@ Widget build(BuildContext context) {
                                   child: Text(
                                     'Jakarta',
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 11,
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w600,
@@ -222,10 +227,10 @@ Widget build(BuildContext context) {
                               ],
                             ),
                           ),
+                        ),
                         SizedBox(width: 8),
                         GestureDetector(
                           onTap: () {
-                            // Navigate to HomeBandungView
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -248,7 +253,7 @@ Widget build(BuildContext context) {
                                     borderRadius: BorderRadius.circular(11),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Color(0),
+                                        color: Color(0x3F000000),
                                         blurRadius: 4,
                                         offset: Offset(0, 0),
                                       ),
@@ -284,7 +289,6 @@ Widget build(BuildContext context) {
                         SizedBox(width: 8),
                         GestureDetector(
                           onTap: () {
-                            // Handle the tap action, for example, navigate to another screen
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -341,62 +345,52 @@ Widget build(BuildContext context) {
                           ),
                         ),
                         SizedBox(width: 8),
-                        GestureDetector(
-                          onTap: () {
-                            // Handle the tap action, for example, navigate to another screen
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeKudusView()),
-                            );
-                          },
-                          child: Card(
-                            elevation: 4,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(11),
-                            ),
-                            color: Colors.white,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Container(
-                                  width: 97,
-                                  height: 73,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(11),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Color(0),
-                                        blurRadius: 4,
-                                        offset: Offset(0, 0),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image.asset(
-                                        'assets/kotakudus.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
+                        Card(
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(11),
+                          ),
+                          color: Color(0xFF2254D1),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                width: 97,
+                                height: 73,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(11),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0),
+                                      blurRadius: 4,
+                                      offset: Offset(0, 0),
+                                    ),
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image.asset(
+                                      'assets/kotakudus.jpg',
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'Kudus',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 11,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Kudus',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 11,
+                                    fontFamily: 'Poppins',
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -539,7 +533,11 @@ Widget build(BuildContext context) {
                                         child: Container(
                                           width: 9,
                                           height: 17,
-                                          child: Icon(Icons.location_pin, size: 10,color: Colors.red,),
+                                          child: Icon(
+                                            Icons.location_pin,
+                                            size: 10,
+                                            color: Colors.red,
+                                          ),
                                         ),
                                       ),
                                       Positioned(
@@ -625,7 +623,6 @@ Widget build(BuildContext context) {
         currentIndex: 0,
         onTap: (int index) {
           if (index == 0) {
-
           } else if (index == 1) {
             Get.offNamed('/LikePage');
           } else if (index == 2) {
