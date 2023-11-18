@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kostku_app/payment_input/Controller/Payment_Input_Controller.dart';
+import 'package:kostku_app/payment/payment_input/Controller/Payment_Input_Controller.dart';
 
 
 class InputPaymentPage extends StatelessWidget {
@@ -83,7 +83,9 @@ class InputPaymentPage extends StatelessWidget {
 
             SizedBox(height: 16.0),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('/PaymentBill');
+              },
               child: Text('Ajukan'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF2254D1),
