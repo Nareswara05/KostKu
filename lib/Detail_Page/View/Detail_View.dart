@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../Controller/Detail_Controller.dart';
+import 'package:kostku_app/payment/payment_input/View/Payment_Input_View.dart';
 
 class DetailView extends StatelessWidget {
   final DetailController controller = Get.put(DetailController());
@@ -133,7 +134,7 @@ class DetailView extends StatelessWidget {
                             Text(
                               'kamar tersisa: ',
                               style: TextStyle(
-                                color: Colors.black, 
+                                color: Colors.black,
                                 fontSize: 13,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w600,
@@ -143,7 +144,7 @@ class DetailView extends StatelessWidget {
                             Text(
                               '${selectedKos.sisaKamar}',
                               style: TextStyle(
-                                color: Colors.red, 
+                                color: Colors.red,
                                 fontSize: 13,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w600,
@@ -242,28 +243,35 @@ class DetailView extends StatelessWidget {
             Positioned(
               left: 39,
               top: 36,
-              child: Container(
-                width: 141,
-                height: 37,
-                decoration: ShapeDecoration(
-                  color: Color(0xFF2254D1),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(11),
+              child: GestureDetector(
+                onTap: () {
+                  // Navigate to InputPaymentPage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => InputPaymentPage()),
+                  );
+                },
+                child: Container(
+                  width: 141,
+                  height: 37,
+                  decoration: ShapeDecoration(
+                    color: Color(0xFF2254D1),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(11),
+                    ),
                   ),
-                ),
-              ),
-            ),
-            Positioned(
-              left: 64,
-              top: 44,
-              child: Text(
-                'Ajukan Sewa',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  height: 0,
+                  child: Center(
+                    child: Text(
+                      'Ajukan Sewa',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w600,
+                        height: 0,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -286,7 +294,7 @@ class DetailView extends StatelessWidget {
                             side: BorderSide(
                               width: 1,
                               color:
-                                  Colors.black.withOpacity(0.36000001430511475),
+                              Colors.black.withOpacity(0.36000001430511475),
                             ),
                             borderRadius: BorderRadius.circular(11),
                           ),
