@@ -9,17 +9,18 @@ import 'package:kostku_app/Home_Page/View/Home_Semarang_View.dart';
 import 'package:kostku_app/Home_Page/View/Home_Kudus_View.dart';
 import 'package:kostku_app/Like_Page/View/Like_View.dart';
 import 'package:kostku_app/profile_page/View/Profile_Page.dart';
+import 'package:kostku_app/Detail_Page/View/Detail_View.dart';
 
 import '../Controller/Home_Jakarta_Controller.dart';
 
 class HomeJakartaView extends StatelessWidget {
   final HomeJakartaController controller = Get.put(HomeJakartaController());
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    backgroundColor: Colors.white,
-    appBar: PreferredSize(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(52),
         child: AppBar(
           backgroundColor: Colors.white,
@@ -45,27 +46,24 @@ Widget build(BuildContext context) {
                 ),
               ),
               Spacer(),
-                IconButton(
-                  padding: EdgeInsets.all(0), // Atur padding menjadi 0
-                  icon: Iconify(
-                    AntDesign.message,
-                    size: 24,
-                    color: Colors.black54,
-                  ),
-                  onPressed: () {
-
-                  },
+              IconButton(
+                padding: EdgeInsets.all(0), // Atur padding menjadi 0
+                icon: Iconify(
+                  AntDesign.message,
+                  size: 24,
+                  color: Colors.black54,
                 ),
-                IconButton(
-                  padding: EdgeInsets.all(0), 
-                  icon: Icon(
-                    Icons.notifications,
-                    size: 24,
-                    color: Colors.black54,
-                  ),
-                  onPressed: () {
-                  },
+                onPressed: () {},
+              ),
+              IconButton(
+                padding: EdgeInsets.all(0),
+                icon: Icon(
+                  Icons.notifications,
+                  size: 24,
+                  color: Colors.black54,
                 ),
+                onPressed: () {},
+              ),
             ],
           ),
         ),
@@ -172,56 +170,56 @@ Widget build(BuildContext context) {
                   SizedBox(height: 8),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Row( 
+                    child: Row(
                       children: [
-                            Card(
-                            elevation: 4,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(11),
-                            ),
-                            color: Color(0xFF2254D1),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Container(
-                                  width: 97,
-                                  height: 73,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(11),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Color(0x3F000000),
-                                        blurRadius: 4,
-                                        offset: Offset(0, 0),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image.asset(
-                                        'assets/monasjakarta.jpg', 
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'Jakarta',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 11,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                        Card(
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(11),
                           ),
+                          color: Color(0xFF2254D1),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                width: 97,
+                                height: 73,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(11),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0x3F000000),
+                                      blurRadius: 4,
+                                      offset: Offset(0, 0),
+                                    ),
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image.asset(
+                                      'assets/monasjakarta.jpg',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Jakarta',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 11,
+                                    fontFamily: 'Poppins',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                         SizedBox(width: 8),
                         GestureDetector(
                           onTap: () {
@@ -434,21 +432,27 @@ Widget build(BuildContext context) {
                               Positioned(
                                 left: 0,
                                 top: 2,
-                                child: Container(
-                                  width: 108,
-                                  height: 70,
-                                  decoration: ShapeDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(kos.gambarKos),
-                                      fit: BoxFit.fill,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      side: BorderSide(
-                                        width: 1,
-                                        color: Colors.black
-                                            .withOpacity(0.1899999976158142),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Get.to(() => DetailView(),
+                                        arguments: {'index': index});
+                                  },
+                                  child: Container(
+                                    width: 108,
+                                    height: 70,
+                                    decoration: ShapeDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(kos.gambarKos),
+                                        fit: BoxFit.fill,
                                       ),
-                                      borderRadius: BorderRadius.circular(12),
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(
+                                          width: 1,
+                                          color: Colors.black
+                                              .withOpacity(0.1899999976158142),
+                                        ),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -527,6 +531,21 @@ Widget build(BuildContext context) {
                               ),
                               Positioned(
                                 left: 111,
+                                top: 0,
+                                child: Text(
+                                  kos.namaKos,
+                                  style: TextStyle(
+                                    color: Colors.black
+                                        .withOpacity(0.8999999761581421),
+                                    fontSize: 13,
+                                    fontFamily: 'Poppins',
+                                    fontWeight: FontWeight.w600,
+                                    height: 0,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 111,
                                 top: 21,
                                 child: Container(
                                   width: 151,
@@ -539,7 +558,11 @@ Widget build(BuildContext context) {
                                         child: Container(
                                           width: 9,
                                           height: 17,
-                                          child: Icon(Icons.location_pin, size: 10,color: Colors.red,),
+                                          child: Icon(
+                                            Icons.location_pin,
+                                            size: 10,
+                                            color: Colors.red,
+                                          ),
                                         ),
                                       ),
                                       Positioned(
@@ -588,6 +611,20 @@ Widget build(BuildContext context) {
                                   ),
                                 ),
                               ),
+                              Positioned(
+                                right: 3,
+                                top: 2,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    LikeView();
+                                  },
+                                  child: Iconify(
+                                    AntDesign.heart,
+                                    color: Colors.black54,
+                                    size: 25.0,
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         );
@@ -625,7 +662,6 @@ Widget build(BuildContext context) {
         currentIndex: 0,
         onTap: (int index) {
           if (index == 0) {
-
           } else if (index == 1) {
             Get.offNamed('/LikePage');
           } else if (index == 2) {

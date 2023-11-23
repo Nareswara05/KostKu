@@ -9,6 +9,7 @@ import 'package:kostku_app/Home_Page/View/Home_Kudus_View.dart';
 import 'package:kostku_app/Like_Page/Model/Model.dart';
 import 'package:kostku_app/Like_Page/View/Like_View.dart';
 import 'package:kostku_app/profile_page/View/Profile_Page.dart';
+import 'package:kostku_app/Detail_Page/View/Detail_Semarang_View.dart';
 
 import '../Controller/Home_Semarang_Controller.dart';
 
@@ -439,21 +440,27 @@ class HomeSemarangView extends StatelessWidget {
                               Positioned(
                                 left: 0,
                                 top: 2,
-                                child: Container(
-                                  width: 108,
-                                  height: 70,
-                                  decoration: ShapeDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(kos.gambarKos),
-                                      fit: BoxFit.fill,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      side: BorderSide(
-                                        width: 1,
-                                        color: Colors.black
-                                            .withOpacity(0.1899999976158142),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Get.to(() => DetailSemarangView(),
+                                        arguments: {'index': index});
+                                  },
+                                  child: Container(
+                                    width: 108,
+                                    height: 70,
+                                    decoration: ShapeDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(kos.gambarKos),
+                                        fit: BoxFit.fill,
                                       ),
-                                      borderRadius: BorderRadius.circular(12),
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(
+                                          width: 1,
+                                          color: Colors.black
+                                              .withOpacity(0.1899999976158142),
+                                        ),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -512,6 +519,21 @@ class HomeSemarangView extends StatelessWidget {
                                         ),
                                       ),
                                     ],
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 111,
+                                top: 0,
+                                child: Text(
+                                  kos.namaKos,
+                                  style: TextStyle(
+                                    color: Colors.black
+                                        .withOpacity(0.8999999761581421),
+                                    fontSize: 13,
+                                    fontFamily: 'Poppins',
+                                    fontWeight: FontWeight.w600,
+                                    height: 0,
                                   ),
                                 ),
                               ),
@@ -594,6 +616,20 @@ class HomeSemarangView extends StatelessWidget {
                                     fontFamily: 'Poppins',
                                     fontWeight: FontWeight.w400,
                                     height: 0,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                right: 3,
+                                top: 2,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    LikeView();
+                                  },
+                                  child: Iconify(
+                                    AntDesign.heart,
+                                    color: Colors.black54,
+                                    size: 25.0,
                                   ),
                                 ),
                               ),
