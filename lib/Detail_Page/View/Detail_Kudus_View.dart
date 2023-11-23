@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../Controller/Detail_Controller.dart';
+import '../Controller/Detail_Kudus_Controller.dart';
 
-class DetailView extends StatelessWidget {
-  final DetailController controller = Get.put(DetailController());
+class DetailKudusView extends StatelessWidget {
+  final DetailKudusController controller = Get.put(DetailKudusController());
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +133,7 @@ class DetailView extends StatelessWidget {
                             Text(
                               'kamar tersisa: ',
                               style: TextStyle(
-                                color: Colors.black, 
+                                color: Colors.black,
                                 fontSize: 13,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w600,
@@ -143,7 +143,7 @@ class DetailView extends StatelessWidget {
                             Text(
                               '${selectedKos.sisaKamar}',
                               style: TextStyle(
-                                color: Colors.red, 
+                                color: Colors.red,
                                 fontSize: 13,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w600,
@@ -165,7 +165,7 @@ class DetailView extends StatelessWidget {
                           'Nama pemilik : ${selectedKos.namaPemilikKos}',
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 16  ,
+                            fontSize: 16,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w600,
                             height: 0,

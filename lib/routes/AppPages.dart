@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:kostku_app/Detail_Page/View/Detail_View.dart';
 import 'package:kostku_app/Home_Page/Controller/Home_Bandung_Controller.dart';
 import 'package:kostku_app/Home_Page/View/Home_Bandung_View.dart';
 import 'package:kostku_app/Home_Page/View/Home_Jakarta_View.dart';
@@ -44,6 +45,11 @@ class AppPages {
     GetPage(
       name: '/HomePage/Semarang',
       page: () => HomeSemarangView(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: '/DetailPage',
+      page: () => DetailView(),
       transition: Transition.fadeIn,
     ),
     GetPage(

@@ -42,7 +42,7 @@ class LoginController extends GetxController {
           if (email == "eve.holt@reqres.in" && password == "cityslicka") {
           await prefs.setString('username', token.toString());
           Get.offNamed('/HomePage');
-          isSuccess.value = true;
+          isSuccess.value = true; 
         }   
 
         isLoading.value = false;
